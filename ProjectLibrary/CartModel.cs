@@ -11,15 +11,21 @@
 //  <author>Nikolay Nenov</author>
 //  --------------------------------------------------------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nenov.DelegatesExample.ProjectLibrary;
 
-namespace ProjectLibrary
+namespace Nenov.DelegatesExample.ProjectLibrary
 {
   public class CartModel
   {
-    public IList<ProductModel> Products { get; set; }
+    /// <summary>
+    /// Mention discount delegate method
+    /// </summary>
+    /// <param name="subTotal"></param>
+    public delegate void MentionDiscount(decimal subTotal);
+
+    public List<ProductModel> Products { get; set; }
 
     /// <summary>
     /// Default constructor
@@ -29,9 +35,21 @@ namespace ProjectLibrary
       Products = new List<ProductModel>();
     }
 
-    public decimal GenerateTotal()
+    /// <summary>
+    /// Generate total sum
+    /// * Creating anonymous methods: anonymous Delegate
+    /// * Creating anonymous methods: anonymous Func
+    /// </summary>
+    /// <returns></returns>
+    public decimal GenerateTotal(MentionDiscount mentionDiscount, Func<List<ProductModel>, decimal, decimal> calculateDiscountedTotal)
     {
-      return Products.Sum(product => product.Price);
+      decimal subTotal = Products.Sum(product => product.Price);
+
+      // Use delegate method
+      mentionDiscount?.Invoke(subTotal);
+
+      // Use Func method
+      return calculateDiscountedTotal(Products, subTotal);
     }
   }
 }
