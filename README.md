@@ -1,5 +1,5 @@
 # Delegates example
-A practical demonstration, including Action and Func
+[A practical demonstration, including Action and Func](https://www.youtube.com/watch?v=R8Blt5c-Vi4)
 
 * Func Delegate: creating and explaining
 * Action Delegate: creating and explaining
