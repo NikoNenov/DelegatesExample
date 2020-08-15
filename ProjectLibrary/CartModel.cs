@@ -25,6 +25,9 @@ namespace Nenov.DelegatesExample.ProjectLibrary
     /// <param name="subTotal"></param>
     public delegate void MentionDiscount(decimal subTotal);
 
+    /// <summary>
+    /// List of products
+    /// </summary>
     public List<ProductModel> Products { get; set; }
 
     /// <summary>
@@ -39,17 +42,26 @@ namespace Nenov.DelegatesExample.ProjectLibrary
     /// Generate total sum
     /// * Creating anonymous methods: anonymous Delegate
     /// * Creating anonymous methods: anonymous Func
+    /// * Creating anonymous methods: anonymous Action
     /// </summary>
+    /// <param name="mentionSubtotal"></param>
+    /// <param name="calculateDiscountedTotal"></param>
+    /// <param name="tellUserWeAreDiscounting"></param>
     /// <returns></returns>
-    public decimal GenerateTotal(MentionDiscount mentionDiscount, Func<List<ProductModel>, decimal, decimal> calculateDiscountedTotal)
+    public decimal GenerateTotal(MentionDiscount mentionSubtotal, 
+      Func<List<ProductModel>, decimal, decimal> calculateDiscountedTotal,
+      Action<string> tellUserWeAreDiscounting)
     {
       decimal subTotal = Products.Sum(product => product.Price);
 
       // Use delegate method
-      mentionDiscount?.Invoke(subTotal);
+      mentionSubtotal?.Invoke(subTotal);
+
+      // Use Action method
+      tellUserWeAreDiscounting?.Invoke("We are applying your discount.");
 
       // Use Func method
-      return calculateDiscountedTotal(Products, subTotal);
+      return calculateDiscountedTotal?.Invoke(Products, subTotal) ?? 0;
     }
   }
 }

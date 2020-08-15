@@ -30,8 +30,32 @@ namespace Nenov.DelegatesExample.ConsoleUI
       Console.WriteLine("*** Delegates example ***");
       InitCartWithDemoData();
 
-      Console.WriteLine($"The total for the cart is: {_cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount):C2}");
+      // Use Delegate method
+      // Use Func method
+      // Use Action method
+      Console.WriteLine($"The total for the cart is: {_cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount, AlertUser):C2}");
+      Console.WriteLine();
+      Console.WriteLine("=== Use anonymous methods ===");
 
+      // Use anonymous Delegate
+      // Use anonymous Func
+      // Use anonymous Action
+      decimal total = _cart.GenerateTotal(
+        (subTotal) => Console.WriteLine($"The subtotal for cart 2 is: {subTotal:C2}"),
+        (products, subTotal) =>
+        {
+          if (products.Count > 3)
+          {
+            return subTotal * 0.5M;
+          }
+
+          return subTotal;
+        },
+        (message) => Console.WriteLine($"Cart 2 alert: {message}")
+        );
+      Console.WriteLine($"The total for cart 2 is: {total:C2}");
+
+      Console.ReadKey();
     }
 
     /// <summary>
@@ -42,7 +66,8 @@ namespace Nenov.DelegatesExample.ConsoleUI
       _cart.Products.Add(new ProductModel{Name = "Milk", Price = 1.35M});
       _cart.Products.Add(new ProductModel { Name = "Cheese", Price = 3.21M});
       _cart.Products.Add(new ProductModel { Name = "Pizza", Price = 5.24M});
-      _cart.Products.Add(new ProductModel { Name = "Potatoes", Price = 3.45M}); 
+      _cart.Products.Add(new ProductModel { Name = "Potatoes", Price = 3.45M});
+      _cart.Products.Add(new ProductModel { Name = "Bananas", Price = 1.32M });
     }
 
     /// <summary>
@@ -76,6 +101,15 @@ namespace Nenov.DelegatesExample.ConsoleUI
       }
 
       return subTotal;
+    }
+
+    /// <summary>
+    /// Implement Action method in a ConsoleUI application
+    /// </summary>
+    /// <param name="message"></param>
+    private static void AlertUser(string message)
+    {
+      Console.WriteLine(message);
     }
   }
 }
