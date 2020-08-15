@@ -85,7 +85,7 @@ namespace Nenov.DelegatesExample.ConsoleUI
     /// <param name="products"></param>
     /// <param name="subTotal"></param>
     /// <returns></returns>
-    private decimal CalculateLeveledDiscount(List<ProductModel> products, decimal subTotal)
+    private static decimal CalculateLeveledDiscount(List<ProductModel> products, decimal subTotal)
     {
       if (subTotal > 100)
       {
