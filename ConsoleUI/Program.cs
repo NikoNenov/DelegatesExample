@@ -19,7 +19,7 @@ namespace Nenov.DelegatesExample.ConsoleUI
 {
   public class Program
   {
-    private static CartModel _cart = new CartModel();
+    private static readonly CartModel _cart = new CartModel();
 
     /// <summary>
     /// Application main method
@@ -80,22 +80,22 @@ namespace Nenov.DelegatesExample.ConsoleUI
     }
 
     /// <summary>
-    /// Implement Func method in a Console UI application
+    /// Implement Func method in a ConsoleUI application
     /// </summary>
     /// <param name="products"></param>
     /// <param name="subTotal"></param>
     /// <returns></returns>
-    private static decimal CalculateLeveledDiscount(List<ProductModel> products, decimal subTotal)
+    private decimal CalculateLeveledDiscount(List<ProductModel> products, decimal subTotal)
     {
       if (subTotal > 100)
       {
         subTotal *= 0.80M;
       }
-      if (subTotal > 50)
+      else if (subTotal > 50)
       {
         subTotal *= 0.85M;
       }
-      if (subTotal > 10)
+      else if (subTotal > 10)
       {
         subTotal *= 0.95M;
       }
