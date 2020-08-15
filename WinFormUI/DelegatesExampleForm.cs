@@ -48,7 +48,7 @@ namespace Nenov.DelegatesExample.WinFormUI
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void MessageButton_Click(object sender, EventArgs e)
+    private void messageButton_Click(object sender, EventArgs e)
     {
       decimal total = _cart.GenerateTotal(ShowSubTotalAlert, CalculateLeveledDiscount, ShowDiscountAlert);
       MessageBox.Show($"The total is {total:C2}");
@@ -59,15 +59,15 @@ namespace Nenov.DelegatesExample.WinFormUI
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void CalcButton_Click(object sender, EventArgs e)
+    private void calcButton_Click(object sender, EventArgs e)
     {
       decimal total = _cart.GenerateTotal(
-        (subTotal) => SubtotalTextBox.Text = $"{subTotal:C2}",
+        (subTotal) => subtotalTextBox.Text = $"{subTotal:C2}",
         (products, subTotal) => products.Count > 3 ? subTotal - 3M : subTotal,
         (message) => { }
       );
 
-      TotalTextBox.Text = $"{total:C2}";
+      totalTextBox.Text = $"{total:C2}";
     }
 
     /// <summary>

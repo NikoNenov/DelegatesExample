@@ -28,77 +28,77 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.SubtotalLabel = new System.Windows.Forms.Label();
-      this.TotalLabel = new System.Windows.Forms.Label();
-      this.SubtotalTextBox = new System.Windows.Forms.TextBox();
-      this.TotalTextBox = new System.Windows.Forms.TextBox();
-      this.CalcButton = new System.Windows.Forms.Button();
-      this.MessageButton = new System.Windows.Forms.Button();
+      this.subtotalLabel = new System.Windows.Forms.Label();
+      this.totalLabel = new System.Windows.Forms.Label();
+      this.subtotalTextBox = new System.Windows.Forms.TextBox();
+      this.totalTextBox = new System.Windows.Forms.TextBox();
+      this.calcButton = new System.Windows.Forms.Button();
+      this.messageButton = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
-      // SubtotalLabel
+      // subtotalLabel
       // 
-      this.SubtotalLabel.AutoSize = true;
-      this.SubtotalLabel.Location = new System.Drawing.Point(12, 9);
-      this.SubtotalLabel.Name = "SubtotalLabel";
-      this.SubtotalLabel.Size = new System.Drawing.Size(79, 25);
-      this.SubtotalLabel.TabIndex = 0;
-      this.SubtotalLabel.Text = "Subtotal";
+      this.subtotalLabel.AutoSize = true;
+      this.subtotalLabel.Location = new System.Drawing.Point(12, 9);
+      this.subtotalLabel.Name = "subtotalLabel";
+      this.subtotalLabel.Size = new System.Drawing.Size(79, 25);
+      this.subtotalLabel.TabIndex = 0;
+      this.subtotalLabel.Text = "Subtotal";
       // 
-      // TotalLabel
+      // totalLabel
       // 
-      this.TotalLabel.AutoSize = true;
-      this.TotalLabel.Location = new System.Drawing.Point(310, 9);
-      this.TotalLabel.Name = "TotalLabel";
-      this.TotalLabel.Size = new System.Drawing.Size(49, 25);
-      this.TotalLabel.TabIndex = 0;
-      this.TotalLabel.Text = "Total";
+      this.totalLabel.AutoSize = true;
+      this.totalLabel.Location = new System.Drawing.Point(310, 9);
+      this.totalLabel.Name = "totalLabel";
+      this.totalLabel.Size = new System.Drawing.Size(49, 25);
+      this.totalLabel.TabIndex = 0;
+      this.totalLabel.Text = "Total";
       // 
-      // SubtotalTextBox
+      // subtotalTextBox
       // 
-      this.SubtotalTextBox.Location = new System.Drawing.Point(12, 37);
-      this.SubtotalTextBox.Name = "SubtotalTextBox";
-      this.SubtotalTextBox.Size = new System.Drawing.Size(150, 31);
-      this.SubtotalTextBox.TabIndex = 1;
+      this.subtotalTextBox.Location = new System.Drawing.Point(12, 37);
+      this.subtotalTextBox.Name = "subtotalTextBox";
+      this.subtotalTextBox.Size = new System.Drawing.Size(150, 31);
+      this.subtotalTextBox.TabIndex = 1;
       // 
-      // TotalTextBox
+      // totalTextBox
       // 
-      this.TotalTextBox.Location = new System.Drawing.Point(310, 37);
-      this.TotalTextBox.Name = "TotalTextBox";
-      this.TotalTextBox.Size = new System.Drawing.Size(150, 31);
-      this.TotalTextBox.TabIndex = 1;
+      this.totalTextBox.Location = new System.Drawing.Point(310, 37);
+      this.totalTextBox.Name = "totalTextBox";
+      this.totalTextBox.Size = new System.Drawing.Size(150, 31);
+      this.totalTextBox.TabIndex = 1;
       // 
-      // CalcButton
+      // calcButton
       // 
-      this.CalcButton.Location = new System.Drawing.Point(12, 106);
-      this.CalcButton.Name = "CalcButton";
-      this.CalcButton.Size = new System.Drawing.Size(150, 34);
-      this.CalcButton.TabIndex = 2;
-      this.CalcButton.Text = "Calc";
-      this.CalcButton.UseVisualStyleBackColor = true;
-      this.CalcButton.Click += new System.EventHandler(this.CalcButton_Click);
+      this.calcButton.Location = new System.Drawing.Point(12, 106);
+      this.calcButton.Name = "calcButton";
+      this.calcButton.Size = new System.Drawing.Size(150, 34);
+      this.calcButton.TabIndex = 2;
+      this.calcButton.Text = "Calc";
+      this.calcButton.UseVisualStyleBackColor = true;
+      this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
       // 
-      // MessageButton
+      // messageButton
       // 
-      this.MessageButton.Location = new System.Drawing.Point(310, 106);
-      this.MessageButton.Name = "MessageButton";
-      this.MessageButton.Size = new System.Drawing.Size(150, 34);
-      this.MessageButton.TabIndex = 2;
-      this.MessageButton.Text = "Message";
-      this.MessageButton.UseVisualStyleBackColor = true;
-      this.MessageButton.Click += new System.EventHandler(this.MessageButton_Click);
+      this.messageButton.Location = new System.Drawing.Point(310, 106);
+      this.messageButton.Name = "messageButton";
+      this.messageButton.Size = new System.Drawing.Size(150, 34);
+      this.messageButton.TabIndex = 2;
+      this.messageButton.Text = "Message";
+      this.messageButton.UseVisualStyleBackColor = true;
+      this.messageButton.Click += new System.EventHandler(this.messageButton_Click);
       // 
       // DelegatesExampleForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(502, 179);
-      this.Controls.Add(this.MessageButton);
-      this.Controls.Add(this.CalcButton);
-      this.Controls.Add(this.TotalTextBox);
-      this.Controls.Add(this.SubtotalTextBox);
-      this.Controls.Add(this.TotalLabel);
-      this.Controls.Add(this.SubtotalLabel);
+      this.Controls.Add(this.messageButton);
+      this.Controls.Add(this.calcButton);
+      this.Controls.Add(this.totalTextBox);
+      this.Controls.Add(this.subtotalTextBox);
+      this.Controls.Add(this.totalLabel);
+      this.Controls.Add(this.subtotalLabel);
       this.Name = "DelegatesExampleForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Delegates example";
@@ -109,12 +109,12 @@
 
     #endregion
 
-    private System.Windows.Forms.Label SubtotalLabel;
-    private System.Windows.Forms.Label TotalLabel;
-    private System.Windows.Forms.TextBox SubtotalTextBox;
-    private System.Windows.Forms.TextBox TotalTextBox;
-    private System.Windows.Forms.Button CalcButton;
-    private System.Windows.Forms.Button MessageButton;
+    private System.Windows.Forms.Label subtotalLabel;
+    private System.Windows.Forms.Label totalLabel;
+    private System.Windows.Forms.TextBox subtotalTextBox;
+    private System.Windows.Forms.TextBox totalTextBox;
+    private System.Windows.Forms.Button calcButton;
+    private System.Windows.Forms.Button messageButton;
   }
 }
 
